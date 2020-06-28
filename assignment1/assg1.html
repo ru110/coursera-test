@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html lang="en" ng-app="LunchCheck">
+
+  <head>
+
+    <title>Lunch Checker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script type="text/javascript" src='app.js'></script>
+
+
+    <style>
+
+      .message { font-size: 1.3em; font-weight: bold; }
+      #lunch-menu
+      {
+        height: 70px;
+        width: 520px;
+        border-radius: 10px;
+        border-color: cornflowerblue;
+        font-weight: bold;
+        font-size:18px;
+      }
+      #note1
+      {
+        color:gray;
+        font-weight: bold;
+        font-size: 23px;
+      }
+      #msg1
+      {
+        color:green;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+      }
+      #chk
+      {
+        width:210px;
+        height:60px;
+        background-color:CornflowerBlue;
+        border-radius:7px;
+        border-color: CornflowerBlue;
+        font-size:20px;
+        font-weight: bold;
+      }
+
+    </style>
+
+  </head>
+
+<body style="background-color:#7FFFD4;">
+
+   <div class="container" ng-controller="LunchCheckController">
+
+     <h1 align="center" style="color:red;font-size: 50px;">Lunch Checker</h1>
+
+
+
+         <div class="form-group">
+          <center>
+            <p style="font-size: 30px;font-weight: bold;color: blue;">Enter your lunch</p>
+             <input id="lunch-menu" type="text"
+
+             placeholder="Comma separated List of dishes you usually have for lunch"
+
+             class="form-control" ng-model="list" ng-style="boxStyle">
+           </br></br></br>
+             <p id="note1">
+             Note: An empty item is not considered under the count Ex. [, , , , , ] will ask you to enter data instead of displaying "Too Much!"</p>
+           </center>
+         </div>
+         </br>
+         <div ng-style ="fontStyle">
+
+          <p id="msg1"> {{msg}}</p>
+
+         </div>
+
+         <div class="form-group">
+          <center>
+             <button class="btn btn-default" ng-click="checkItems()" id="chk">Check If Too Much</button>
+             </center>
+         </div>
+
+
+   </div>
+
+</body>
+
+</html>
